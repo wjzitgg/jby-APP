@@ -1,0 +1,2062 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				"disableSwipeBack": true,
+				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom",
+				"backgroundColor": "#999999",
+				"disableSwipeBack": true,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+
+		{
+			"path": "pages/sign-up/sign-up",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		},
+		{
+			"path": "pages/me/me",
+			"style": {
+				"navigationStyle": "custom", // 隐藏系统导航栏
+				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+			}
+		},
+		{
+			"path": "pages/often/info",
+			"style": {
+				"autoBackButton": false,
+				"navigationBarTitleText": "个人信息"
+			}
+		},
+		{
+			"path": "pages/me/service",
+			"style": {
+				"navigationBarTitleText": "客服与帮助"
+			}
+		},
+		{
+			"path": "pages/me/about-us",
+			"style": {
+				"navigationBarTitleText": "关于我们"
+			}
+		},
+		{
+			"path": "pages/me/setting",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+		{
+			"path": "pages/sign-up/forget-password",
+			"style": {
+				"navigationBarTitleText": "忘记密码"
+			}
+		},
+		{
+			"path": "pages/often/insurance",
+			"style": {
+				"navigationBarTitleText": "保险"
+			}
+		},
+		{
+			"path": "pages/often/insuranceDetail",
+			"style": {
+				"navigationBarTitleText": "保险详情"
+			}
+		},
+		{
+			"path": "pages/often/contract",
+			"style": {
+				"navigationBarTitleText": "劳务合同"
+			}
+		},
+		{
+			"path": "pages/often/contractDetail",
+			"style": {
+				"navigationBarTitleText": "合同详情"
+			}
+		},
+		{
+			"path": "pages/often/train",
+			"style": {
+				"navigationBarTitleText": "培训"
+			}
+		},
+		{
+			"path": "pages/often/trainDetail",
+			"style": {
+				"navigationBarTitleText": "会议详情"
+			}
+		},
+		{
+			"path": "pages/often/experience",
+			"style": {
+				"navigationBarTitleText": "工作经历"
+			}
+		},
+		{
+			"path": "pages/sign-up/code-login",
+			"style": {
+				"navigationBarTitleText": "验证码登录"
+			}
+		},
+		{
+			"path": "pages/often/record",
+			"style": {
+				"navigationBarTitleText": "工资记录"
+			}
+		},
+		{
+			"path": "pages/often/settlement",
+			"style": {
+				"navigationBarTitleText": "工资结算"
+			}
+		},
+		{
+			"path": "pages/often/grant",
+			"style": {
+				"navigationBarTitleText": "工资发放"
+			}
+		},
+		{
+			"path": "pages/often/balance",
+			"style": {
+				"navigationBarTitleText": "工资结余"
+			}
+		},
+		{
+			"path": "pages/often/backlog",
+			"style": {
+				"navigationBarTitleText": "待办事项"
+			}
+		},
+		{
+			"path": "pages/often/completed",
+			"style": {
+				"navigationBarTitleText": "已办事项"
+			}
+		},
+		{
+			"path": "pages/often/stock/request",
+			"style": {
+				"navigationBarTitleText": "物资申请单"
+			}
+		},
+		{
+			"path": "pages/often/stock/applyAdd",
+			"style": {
+				"navigationBarTitleText": "物资申请单详情"
+			}
+		},
+		{
+			"path": "pages/often/stock/applyDetails",
+			"style": {
+				"navigationBarTitleText": "新增物资申请单"
+			}
+		},
+		{
+			"path": "pages/esign/esign",
+			"style": {
+				"autoBackButton": false,
+				"navigationBarTitleText": "",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/esign/affirm",
+			"style": {
+				"navigationBarTitleText": "加入团队"
+			}
+		},
+		{
+			"path": "pages/esign/congratulation",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/esign/approve-sign",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/esign/approve-hint",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/often/crew",
+			"style": {
+				"navigationBarTitleText": "班组人员管理"
+			}
+		},
+		{
+			"path": "pages/often/crew/person",
+			"style": {
+				"navigationBarTitleText": "班组人员管理"
+			}
+		},
+		{
+			"path": "pages/often/crew/personSettle",
+			"style": {
+				"navigationBarTitleText": "班组人员结算"
+			}
+		},
+		{
+			"path": "pages/often/crew/personGrant",
+			"style": {
+				"navigationBarTitleText": "班组人员发放"
+			}
+		},
+		{
+			"path": "pages/often/account",
+			"style": {
+				"navigationBarTitleText": "结算发放流水"
+			}
+		},
+		{
+			"path": "pages/often/dimission",
+			"style": {
+				"navigationBarTitleText": "离职"
+			}
+		},
+		{
+			"path": "pages/often/setting",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/often/crew/setting",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/often/sign-in",
+			"style": {
+				"navigationBarTitleText": "会议签到"
+			}
+		},
+		{
+			"path": "pages/material/plannedOrder",
+			"style": {
+				"navigationBarTitleText": "采购计划单"
+			}
+		},
+		{
+			"path": "pages/often/orderDetails",
+			"style": {
+				"navigationBarTitleText": "采购计划单详情"
+			}
+		},
+		{
+			"path": "pages/finance/project",
+			"style": {
+				"navigationBarTitleText": "收付款管理"
+			}
+		},
+		{
+			"path": "pages/me/amend-password",
+			"style": {
+				"navigationBarTitleText": "修改登录密码"
+			}
+		},
+		{
+			"path": "pages/me/amend-phone",
+			"style": {
+				"navigationBarTitleText": "修改手机号码"
+			}
+		},
+		{
+			"path": "pages/me/amend-certification",
+			"style": {
+				"navigationBarTitleText": "修改实名信息"
+			}
+		},
+		{
+			"path": "pages/me/cancel",
+			"style": {
+				"navigationBarTitleText": "注销账号"
+			}
+		},
+		{
+			"path": "pages/me/import-hint",
+			"style": {
+				"navigationBarTitleText": "重要提示"
+			}
+		},
+		{
+			"path": "pages/me/privacy",
+			"style": {
+				"navigationBarTitleText": "隐私政策",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/certification/certification",
+			"style": {
+				"navigationBarTitleText": "实名认证"
+			}
+		},
+		{
+			"path": "pages/certification/business-certification",
+			"style": {
+				"navigationBarTitleText": "企业实名"
+			}
+		},
+		{
+			"path": "pages/certification/department",
+			"style": {
+				"navigationBarTitleText": "部门管理"
+			}
+		},
+		{
+			"path": "pages/certification/role",
+			"style": {
+				"navigationBarTitleText": "角色管理"
+			}
+		},
+		{
+			"path": "pages/certification/staff",
+			"style": {
+				"navigationBarTitleText": "员工管理"
+			}
+		},
+		{
+			"path": "pages/certification/staffAdd",
+			"style": {
+				"navigationBarTitleText": "员工管理新增编辑"
+			}
+		},
+		{
+			"path": "pages/certification/theProject",
+			"style": {
+				"navigationBarTitleText": "所辖项目"
+			}
+		},
+		{
+			"path": "pages/certification/organization",
+			"style": {
+				"navigationBarTitleText": "组织机构"
+			}
+		},
+		{
+			"path": "pages/certification/addDep",
+			"style": {
+				"navigationBarTitleText": "新增部门"
+			}
+		},
+		{
+			"path": "pages/certification/addRole",
+			"style": {
+				"navigationBarTitleText": "新增角色"
+			}
+		},
+		{
+			"path": "pages/login/select-account",
+			"style": {
+				"navigationBarTitleText": "选择账号"
+			}
+		},
+		{
+			"path": "pages/oderInfo/oderInfo",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "采购计划单信息"
+			}
+		},
+		{
+			"path": "pages/oderInfo/supplyInfo",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "供货信息"
+			}
+		},
+		{
+			"path": "pages/waiting/contractSign",
+			"style": {
+				"navigationBarTitleText": "合同签署"
+			}
+		},
+		{
+			"path": "pages/waiting/meetingSign",
+			"style": {
+				"navigationBarTitleText": "会议签到"
+			}
+		},
+		{
+			"path": "pages/waiting/salarySettle",
+			"style": {
+				"navigationBarTitleText": "工资结算"
+			}
+		},
+		{
+			"path": "pages/waiting/salaryGrant",
+			"style": {
+				"navigationBarTitleText": "工资发放"
+			}
+		},
+		{
+			"path": "pages/waiting/contractDetail",
+			"style": {
+				"navigationBarTitleText": "工资详情"
+			}
+		},
+		{
+			"path": "pages/waiting/otherWaiting",
+			"style": {
+				"navigationBarTitleText": "其他待办"
+			}
+		},
+		{
+			"path": "pages/waiting/renewayApproval",
+			"style": {
+				"navigationBarTitleText": "采购计划单"
+			}
+		},
+		{
+			"path": "pages/waiting/smsSignApproval",
+			"style": {
+				"navigationBarTitleText": "退货单"
+			}
+		},
+		{
+			"path": "pages/waiting/smsChangeApproval",
+			"style": {
+				"navigationBarTitleText": "结算单"
+			}
+		},
+		{
+			"path": "pages/waiting/checkInventory",
+			"style": {
+				"navigationBarTitleText": "库存盘点"
+			}
+		},
+		{
+			"path": "pages/waiting/checkInventoryDetail",
+			"style": {
+				"navigationBarTitleText": "库存盘点"
+			}
+		},
+		{
+			"path": "pages/waiting/deliveryReceiving",
+			"style": {
+				"navigationBarTitleText": "施工验收"
+			}
+		},
+		{
+			"path": "pages/waiting/deliveryReceivingDetail",
+			"style": {
+				"navigationBarTitleText": "施工验收"
+			}
+		},
+		{
+			"path": "pages/waiting/changeDesign",
+			"style": {
+				"navigationBarTitleText": "变更设计"
+			}
+		},
+		{
+			"path": "pages/waiting/changeDesignDetail",
+			"style": {
+				"navigationBarTitleText": "变更设计"
+			}
+		},
+		{
+			"path": "pages/waiting/meterSettle",
+			"style": {
+				"navigationBarTitleText": "计量结算"
+			}
+		},
+		{
+			"path": "pages/waiting/meterSettleDetail",
+			"style": {
+				"navigationBarTitleText": "计量结算"
+			}
+		},
+		{
+			"path": "pages/waiting/contractWaiting",
+			"style": {
+				"navigationBarTitleText": "合同待办"
+			}
+		},
+		{
+			"path": "pages/waiting/technicalDisclosure",
+			"style": {
+				"navigationBarTitleText": "技术交底"
+			}
+		},
+		{
+			"path": "pages/waiting/technicalDisclosureDetail",
+			"style": {
+				"navigationBarTitleText": "技术交底"
+			}
+		},
+		{
+			"path": "pages/waiting/sealManage",
+			"style": {
+				"navigationBarTitleText": "用章管理"
+			}
+		},
+		{
+			"path": "pages/waiting/sealManageDetail",
+			"style": {
+				"navigationBarTitleText": "用章管理"
+			}
+		},
+		{
+			"path": "pages/waiting/announcement",
+			"style": {
+				"navigationBarTitleText": "通知公告"
+			}
+		},
+		{
+			"path": "pages/waiting/todoList",
+			"style": {
+				"navigationBarTitleText": "待办事项"
+			}
+		},
+		{
+			"path": "pages/waiting/sendSeal",
+			"style": {
+				"navigationBarTitleText": "发起签章"
+			}
+		},
+		{
+			"path": "pages/waiting/sealSet",
+			"style": {
+				"navigationBarTitleText": "盖章"
+			}
+		},
+		{
+			"path": "pages/contract/construction",
+			"style": {
+				"navigationBarTitleText": "施工合同"
+			}
+		},
+		{
+			"path": "pages/contract/supervisor",
+			"style": {
+				"navigationBarTitleText": "监理合同"
+			}
+		},
+		{
+			"path": "pages/contract/supply",
+			"style": {
+				"navigationBarTitleText": "供货合同"
+			}
+		},
+		{
+			"path": "pages/contract/sub",
+			"style": {
+				"navigationBarTitleText": "分包合同"
+			}
+		},
+		{
+			"path": "pages/contract/addCon",
+			"style": {
+				"navigationBarTitleText": "新增合同"
+			}
+		},
+		{
+			"path": "pages/contract/chartDetail",
+			"style": {
+				"navigationBarTitleText": "章节明细"
+			}
+		},
+		{
+			"path": "pages/contract/addchartDetail",
+			"style": {
+				"navigationBarTitleText": "新增清单"
+			}
+		},
+		{
+			"path": "pages/contract/addMaterial",
+			"style": {
+				"navigationBarTitleText": "新增物料"
+			}
+		},
+		{
+			"path": "pages/contract/materialDetail",
+			"style": {
+				"navigationBarTitleText": "物料详情"
+			}
+		},
+		{
+			"path": "pages/contract/conDetil",
+			"style": {
+				"navigationBarTitleText": "合同详情"
+			}
+		},
+		{
+			"path": "pages/contract/itemDetail",
+			"style": {
+				"navigationBarTitleText": "清单明细"
+			}
+		},
+		{
+			"path": "pages/project/situation",
+			"style": {
+				"navigationBarTitleText": "项目概况"
+			}
+		},
+		{
+			"path": "pages/project/infoAdd",
+			"style": {
+				"navigationBarTitleText": "编辑项目概况"
+			}
+		},
+		{
+			"path": "pages/project/infoAddProject",
+			"style": {
+				"navigationBarTitleText": "新增工程项目"
+			}
+		},
+		{
+			"path": "pages/project/table",
+			"style": {
+				"navigationBarTitleText": "工程项目表"
+			}
+		},
+		{
+			"path": "pages/project/cooperation",
+			"style": {
+				"navigationBarTitleText": "合作单位"
+			}
+		},
+		{
+			"path": "pages/contract/listItems",
+			"style": {
+				"navigationBarTitleText": "清单项目表",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/contract/supplyMaterials",
+			"style": {
+				"navigationBarTitleText": "供应材料",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/custom/sub",
+			"style": {
+				"navigationBarTitleText": "分包商"
+			}
+		},
+		{
+			"path": "pages/custom/superiors",
+			"style": {
+				"navigationBarTitleText": "上级单位"
+			}
+		},
+		{
+			"path": "pages/custom/supply",
+			"style": {
+				"navigationBarTitleText": "供应商"
+			}
+		},
+		{
+			"path": "pages/custom/project",
+			"style": {
+				"navigationBarTitleText": "项目部"
+			}
+		},
+		{
+			"path": "pages/custom/detail",
+			"style": {
+				"navigationBarTitleText": "新增客户"
+			}
+		},
+		{
+			"path": "pages/custom/supplyCustome",
+			"style": {
+				"navigationBarTitleText": "选择直供对象"
+			}
+		},
+		{
+			"path": "pages/custom/selectLink",
+			"style": {
+				"navigationBarTitleText": "选择绑定公司"
+			}
+		},
+		{
+			"path": "pages/production/setting/paper",
+			"style": {
+				"navigationBarTitleText": "工程图纸"
+			}
+		},
+		{
+			"path": "pages/production/setting/drawingEdit",
+			"style": {
+				"navigationBarTitleText": "工程图纸详情"
+			}
+		},
+		{
+			"path": "pages/production/setting/item",
+			"style": {
+				"navigationBarTitleText": "单位分部分项表"
+			}
+		},
+		{
+			"path": "pages/production/setting/workarea",
+			"style": {
+				"navigationBarTitleText": "工区管理"
+			}
+		},
+		{
+			"path": "pages/production/setting/sub",
+			"style": {
+				"navigationBarTitleText": "分包商工程"
+			}
+		},
+		{
+			"path": "pages/production/setting/detailTable",
+			"style": {
+				"navigationBarTitleText": "清单项目表"
+			}
+		},
+		{
+			"path": "pages/production/setting/materialTable",
+			"style": {
+				"navigationBarTitleText": "材料项目表"
+			}
+		},
+		{
+			"path": "pages/production/detector",
+			"style": {
+				"navigationBarTitleText": "试验检测"
+			}
+		},
+		{
+			"path": "pages/production/setting/stuffDivide",
+			"style": {
+				"navigationBarTitleText": "员工工区划分"
+			}
+		},
+		{
+			"path": "pages/production/setting/divisionDetails",
+			"style": {
+				"navigationBarTitleText": "员工工区划分详情"
+			}
+		},
+		{
+			"path": "pages/production/setting/subWorkAreaDetail",
+			"style": {
+				"navigationBarTitleText": "分包商工程任务划分"
+			}
+		},
+		{
+			"path": "pages/production/checkDetail",
+			"style": {
+				"navigationBarTitleText": "检测详情"
+			}
+		},
+		{
+
+			"path": "pages/production/technicalDisclosure",
+			"style": {
+				"navigationBarTitleText": "技术交底"
+			}
+		},
+		{
+			"path": "pages/production/addTechnicalDisclosure",
+			"style": {
+				"navigationBarTitleText": "新增技术交底"
+			}
+		},
+		{
+			"path": "pages/production/log",
+			"style": {
+				"navigationBarTitleText": "施工日志"
+			}
+		},
+		{
+			"path": "pages/production/track",
+			"style": {
+				"navigationBarTitleText": "生产跟踪"
+			}
+		},
+		{
+			"path": "pages/production/deliveryReceiving",
+			"style": {
+				"navigationBarTitleText": "施工验收"
+			}
+		},
+		{
+			"path": "pages/production/newProcess",
+			"style": {
+				"navigationBarTitleText": "新增施工验收"
+			}
+		},
+		{
+			"path": "pages/production/lookProcess",
+			"style": {
+				"navigationBarTitleText": "查看流程"
+			}
+		},
+		{
+			"path": "pages/schedule/yearPlan",
+			"style": {
+				"navigationBarTitleText": "年度计划"
+			}
+		},
+		{
+			"path": "pages/schedule/quarterPlan",
+			"style": {
+				"navigationBarTitleText": "季度计划"
+			}
+		},
+		{
+			"path": "pages/schedule/monthPlan",
+			"style": {
+				"navigationBarTitleText": "月度计划"
+			}
+		},
+		{
+			"path": "pages/production/addLog",
+			"style": {
+				"navigationBarTitleText": "新增施工日志"
+			}
+		},
+		{
+			"path": "pages/production/logEdit",
+			"style": {
+				"navigationBarTitleText": "施工日志详情"
+			}
+		},
+		{
+			"path": "pages/schedule/areaActuallyFinish",
+			"style": {
+				"navigationBarTitleText": "工区实际完成"
+			}
+		},
+		{
+			"path": "pages/schedule/customActuallyFinish",
+			"style": {
+				"navigationBarTitleText": "分包商实际完成"
+			}
+		},
+		{
+			"path": "pages/schedule/areaActuallyFinish2",
+			"style": {
+				"navigationBarTitleText": "工区实际完成"
+			}
+		},
+		{
+			"path": "pages/schedule/customActuallyFinish2",
+			"style": {
+				"navigationBarTitleText": "分包商实际完成"
+			}
+		},
+		{
+			"path": "pages/schedule/areaSummary",
+			"style": {
+				"navigationBarTitleText": "工区进度汇总"
+			}
+		},
+		{
+			"path": "pages/schedule/customSummary",
+			"style": {
+				"navigationBarTitleText": "分包商进度汇总"
+			}
+		},
+		{
+			"path": "pages/quality/system",
+			"style": {
+				"navigationBarTitleText": "质量体系"
+			}
+		},
+		{
+			"path": "pages/quality/manage",
+			"style": {
+				"navigationBarTitleText": "质量日常管理"
+			}
+		},
+		{
+			"path": "pages/quality/addManage",
+			"style": {
+				"navigationBarTitleText": "新增质量日常管理"
+			}
+		},
+		{
+			"path": "pages/quality/check",
+			"style": {
+				"navigationBarTitleText": "上级质量检查"
+			}
+		},
+		{
+			"path": "pages/quality/addCheck",
+			"style": {
+				"navigationBarTitleText": "上级质量检查新增编辑"
+			}
+		},
+		{
+			"path": "pages/quality/evaluate",
+			"style": {
+				"navigationBarTitleText": "质量评定"
+			}
+		},
+		{
+			"path": "pages/quality/evaluateEdit",
+			"style": {
+				"navigationBarTitleText": "质量评定详情"
+			}
+		},
+		{
+			"path": "pages/quality/evaluateTable",
+			"style": {
+				"navigationBarTitleText": "质量评定详情"
+			}
+		},
+		{
+			"path": "pages/safety/system",
+			"style": {
+				"navigationBarTitleText": "安全体系"
+			}
+		},
+		{
+			"path": "pages/safety/manage",
+			"style": {
+				"navigationBarTitleText": "安全日常管理"
+			}
+		},
+		{
+			"path": "pages/safety/addManage",
+			"style": {
+				"navigationBarTitleText": "安全日常管理新增修改"
+			}
+		},
+		{
+			"path": "pages/safety/check",
+			"style": {
+				"navigationBarTitleText": "上级安全检查"
+			}
+		},
+		{
+			"path": "pages/safety/addCheck",
+			"style": {
+				"navigationBarTitleText": "上级安全检查新增编辑"
+			}
+		},
+		{
+			"path": "pages/measure/owner",
+			"style": {
+				"navigationBarTitleText": "业主计量"
+			}
+		},
+		{
+			"path": "pages/measure/sub",
+			"style": {
+				"navigationBarTitleText": "分包计价"
+			}
+		},
+		{
+			"path": "pages/measure/settingDetail",
+			"style": {
+				"navigationBarTitleText": "计量结算"
+			}
+		},
+		{
+			"path": "pages/measure/sealApporval",
+			"style": {
+				"navigationBarTitleText": "盖章审批"
+			}
+		},
+		{
+			"path": "pages/measure/project",
+			"style": {
+				"navigationBarTitleText": "项目计量"
+			}
+		},
+		{
+			"path": "pages/measure/editSettingDetail",
+			"style": {
+				"navigationBarTitleText": "编辑计量详情"
+			}
+		},
+
+		{
+			"path": "pages/change/changeDesign",
+			"style": {
+				"navigationBarTitleText": "设计变更"
+			}
+		},
+		{
+			"path": "pages/change/changeDesignDetail",
+			"style": {
+				"navigationBarTitleText": "设计变更审批"
+			}
+		},
+		{
+			"path": "pages/change/sealApporval",
+			"style": {
+				"navigationBarTitleText": "盖章审批"
+			}
+		},
+		{
+			"path": "pages/change/editDesign",
+			"style": {
+				"navigationBarTitleText": "编辑设计变更"
+			}
+		},
+		{
+			"path": "pages/finance/supplySettle",
+			"style": {
+				"navigationBarTitleText": "供应商结算"
+			}
+		},
+		{
+			"path": "pages/finance/subSettle",
+			"style": {
+				"navigationBarTitleText": "分包商结算"
+			}
+		},
+		{
+			"path": "pages/finance/supplySettle/material",
+			"style": {
+				"navigationBarTitleText": "材料结算"
+			}
+		},
+		{
+			"path": "pages/finance/supplySettle/ledger",
+			"style": {
+				"navigationBarTitleText": "汇总台账"
+			}
+		},
+		{
+			"path": "pages/finance/supplySettle/dealings",
+			"style": {
+				"navigationBarTitleText": "付款往来"
+			}
+		},
+		{
+			"path": "pages/finance/supplySettle/materialDetails",
+			"style": {
+				"navigationBarTitleText": "材料结算详情"
+			}
+		},
+		{
+			"path": "pages/finance/supplySettle/ledgerDetails",
+			"style": {
+				"navigationBarTitleText": "汇总台账详情"
+			}
+		},
+		{
+			"path": "pages/finance/subSettle/subcontractor",
+			"style": {
+				"navigationBarTitleText": "分包计价"
+			}
+		},
+		{
+			"path": "pages/finance/subSettle/materialDeduct",
+			"style": {
+				"navigationBarTitleText": "物资扣除"
+			}
+		},
+		{
+			"path": "pages/finance/subSettle/ledger",
+			"style": {
+				"navigationBarTitleText": "汇总台账"
+			}
+		},
+		{
+			"path": "pages/finance/subSettle/dealings",
+			"style": {
+				"navigationBarTitleText": "收款往来"
+			}
+		},
+		{
+			"path": "pages/finance/supplySettleEdit",
+			"style": {
+				"navigationBarTitleText": "供应商结算详情"
+			}
+		},
+		{
+			"path": "pages/finance/subSettleEdit",
+			"style": {
+				"navigationBarTitleText": "分部商结算详情"
+			}
+		},
+		{
+			"path": "pages/measure/customSummary",
+			"style": {
+				"navigationBarTitleText": "分包商计量汇总"
+			}
+		},
+		{
+			"path": "pages/measure/summary",
+			"style": {
+				"navigationBarTitleText": "计量汇总"
+			}
+		},
+		{
+			"path": "pages/measure/areaSummary",
+			"style": {
+				"navigationBarTitleText": "工区计量汇总"
+			}
+		},
+		{
+			"path": "pages/finance/cost",
+			"style": {
+				"navigationBarTitleText": "管理成本"
+			}
+		},
+		{
+
+			"path": "pages/cost/respon/sub",
+			"style": {
+				"navigationBarTitleText": "分包成本"
+			}
+		},
+		{
+
+			"path": "pages/cost/actual/sub",
+			"style": {
+				"navigationBarTitleText": "分包成本"
+			}
+		},
+		{
+
+			"path": "pages/cost/respon/material",
+			"style": {
+				"navigationBarTitleText": "物资成本"
+			}
+		},
+		{
+
+			"path": "pages/cost/respon/quipment",
+			"style": {
+				"navigationBarTitleText": "设备成本"
+			}
+		},
+		{
+
+			"path": "pages/cost/respon/manage",
+			"style": {
+				"navigationBarTitleText": "管理成本"
+			}
+		},
+		{
+			"path": "pages/cost/respon/summary",
+			"style": {
+				"navigationBarTitleText": "成本汇总"
+			}
+
+		},
+		{
+			"path": "pages/cost/actual/material",
+			"style": {
+				"navigationBarTitleText": "物资成本"
+			}
+		},
+		{
+			"path": "pages/cost/actual/quipment",
+			"style": {
+				"navigationBarTitleText": "设备成本"
+			}
+		},
+		{
+			"path": "pages/cost/actual/manage",
+			"style": {
+				"navigationBarTitleText": "管理成本"
+			}
+		},
+		{
+			"path": "pages/cost/actual/summary",
+			"style": {
+				"navigationBarTitleText": "成本汇总"
+			}
+
+		},
+		{
+			"path": "pages/deal/contractInfo",
+			"style": {
+				"navigationBarTitleText": "经营合同"
+			}
+
+		},
+		{
+			"path": "pages/deal/measure",
+			"style": {
+				"navigationBarTitleText": "项目计量"
+			}
+
+		},
+		{
+			"path": "pages/deal/paymentReceived",
+			"style": {
+				"navigationBarTitleText": "收付款管理"
+			}
+
+		},
+		{
+			"path": "pages/material/apply",
+			"style": {
+				"navigationBarTitleText": "物资申请单"
+			}
+
+		},
+		{
+			"path": "pages/material/supplyRequest",
+			"style": {
+				"navigationBarTitleText": "采购申请单"
+			}
+
+		},
+		{
+			"path": "pages/material/apply/supplier",
+			"style": {
+				"navigationBarTitleText": "供应商供货申请单"
+			}
+
+		},
+		{
+			"path": "pages/material/inventory/request",
+			"style": {
+				"navigationBarTitleText": "物资申请单"
+			}
+
+		},
+		{
+			"path": "pages/material/inventory/applyAdd",
+			"style": {
+				"navigationBarTitleText": "新增编辑物资申请单"
+			}
+
+		},
+		{
+			"path": "pages/material/inventory/applyDetails",
+			"style": {
+				"navigationBarTitleText": "物资申请单详情"
+			}
+
+		},
+		{
+			"path": "pages/material/apply/subcontractor",
+			"style": {
+				"navigationBarTitleText": "分包商材料申请单"
+			}
+
+		},
+
+		{
+			"path": "pages/material/apply/subcontractorDetails",
+			"style": {
+				"navigationBarTitleText": "分包商材料申请单详情"
+			}
+
+		},
+		{
+			"path": "pages/material/apply/supplierDetails",
+			"style": {
+				"navigationBarTitleText": "供应商供货申请单"
+			}
+
+		},
+		{
+			"path": "pages/material/applyDetails",
+			"style": {
+				"navigationBarTitleText": "物资申请单详情"
+			}
+		},
+		{
+			"path": "pages/material/applyAdd",
+			"style": {
+				"navigationBarTitleText": "物资申请新增编辑"
+			}
+		},
+		{
+			"path": "pages/material/generalPurchase",
+			"style": {
+				"navigationBarTitleText": "普通材料采购"
+			}
+		},
+		{
+			"path": "pages/material/betonPurchase",
+			"style": {
+				"navigationBarTitleText": "混凝土采购"
+			}
+		},
+		{
+			"path": "pages/material/rebarPurchase",
+			"style": {
+				"navigationBarTitleText": "钢筋半成品采购"
+			}
+		},
+		{
+			"path": "pages/material/purchaseDetails",
+			"style": {
+				"navigationBarTitleText": "普通材料采购计划单"
+			}
+		},
+		{
+			"path": "pages/material/orderDetails",
+			"style": {
+				"navigationBarTitleText": "材料采购计划单"
+			}
+		},
+		{
+			"path": "pages/material/newPlannedorder",
+			"style": {
+				"navigationBarTitleText": "新增采购计划单"
+			}
+		},
+		{
+			"path": "pages/material/generalStoreIssue",
+			"style": {
+				"navigationBarTitleText": "普通材料发料"
+			}
+		},
+		{
+			"path": "pages/material/generalStoreIssueDetails",
+			"style": {
+				"navigationBarTitleText": "普通材料发料详情"
+			}
+		},
+		{
+			"path": "pages/material/generalStoreIssueAdd",
+			"style": {
+				"navigationBarTitleText": "普通材料发料新增编辑"
+			}
+		},
+		{
+			"path": "pages/material/inventory/outInventory",
+			"style": {
+				"navigationBarTitleText": "出库管理"
+			}
+		},
+		{
+			"path": "pages/material/inventory/addOutInventory",
+			"style": {
+				"navigationBarTitleText": "新增出库管理"
+			}
+		},
+		{
+			"path": "pages/material/inventory/outInventoryDetail",
+			"style": {
+				"navigationBarTitleText": "出库单详情"
+			}
+		},
+		{
+			"path": "pages/material/inventory/inInventory",
+			"style": {
+				"navigationBarTitleText": "入库管理"
+			}
+		},
+		{
+			"path": "pages/material/inventory/material",
+			"style": {
+				"navigationBarTitleText": "库存物料"
+			}
+		},
+		{
+			"path": "pages/material/inventory/firstSupplyInventory",
+			"style": {
+				"navigationBarTitleText": "甲供库存"
+			}
+		},
+		{
+			"path": "pages/material/inventory/ledger",
+			"style": {
+				"navigationBarTitleText": "仓库台账"
+			}
+		},
+		{
+			"path": "pages/material/inventory/ledgerRecord",
+			"style": {
+				"navigationBarTitleText": "甲供库存台账"
+			}
+		},
+		{
+			"path": "pages/material/inventory/materialDetail",
+			"style": {
+				"navigationBarTitleText": "物料明细"
+			}
+		},
+		{
+			"path": "pages/material/inventory/addInInventory",
+			"style": {
+				"navigationBarTitleText": "新增入库管理"
+			}
+		},
+		{
+			"path": "pages/material/inventory/inInventoryDetail",
+			"style": {
+				"navigationBarTitleText": "入库单详情"
+			}
+		},
+		{
+			"path": "pages/material/inventory/check",
+			"style": {
+				"navigationBarTitleText": "盘点管理"
+			}
+		},
+		{
+			"path": "pages/material/inventory/addCheck",
+			"style": {
+				"navigationBarTitleText": "新增盘点单"
+			}
+		},
+		{
+			"path": "pages/material/inventory/checkDetail",
+			"style": {
+				"navigationBarTitleText": "盘点单详情"
+			}
+		},
+		{
+			"path": "pages/material/inventory/checkSend",
+			"style": {
+				"navigationBarTitleText": "提交审批"
+			}
+		},
+		{
+			"path": "pages/material/inventory/sealApporval",
+			"style": {
+				"navigationBarTitleText": "盖章审批"
+			}
+		},
+		{
+			"path": "pages/material/inventory/classStatistics",
+			"style": {
+				"navigationBarTitleText": "分类统计"
+			}
+		},
+		{
+			"path": "pages/material/inventory/info",
+			"style": {
+				"navigationBarTitleText": "库存信息"
+			}
+		},
+		{
+			"path": "pages/material/inventory/alert",
+			"style": {
+				"navigationBarTitleText": "库存预警"
+			}
+		},
+		{
+			"path": "pages/material/inventory/infoAdd",
+			"style": {
+				"navigationBarTitleText": "库存信息修改新增"
+			}
+		},
+		{
+			"path": "pages/material/settle",
+			"style": {
+				"navigationBarTitleText": "物资结算"
+			}
+		},
+		{
+			"path": "pages/material/inventory/firstSupplyAlert",
+			"style": {
+				"navigationBarTitleText": "甲供预警"
+			}
+		},
+		{
+			"path": "pages/labour/team",
+			"style": {
+				"navigationBarTitleText": "班组管理"
+			}
+		},
+		{
+			"path": "pages/labour/teamDetail",
+			"style": {
+				"navigationBarTitleText": "班组信息"
+			}
+		},
+		{
+			"path": "pages/labour/inviteCode",
+			"style": {
+				"navigationBarTitleText": "邀请码"
+			}
+		},
+		{
+			"path": "pages/labour/contract",
+			"style": {
+				"navigationBarTitleText": "劳务合同"
+			}
+		},
+		{
+			"path": "pages/labour/contractDetail",
+			"style": {
+				"navigationBarTitleText": "合同详情"
+			}
+		},
+		{
+			"path": "pages/labour/contractSign",
+			"style": {
+				"navigationBarTitleText": "合同模板"
+			}
+		},
+		{
+			"path": "pages/labour/sealSet",
+			"style": {
+				"navigationBarTitleText": "设置签名区"
+			}
+		},
+		{
+			"path": "pages/labour/directedInvitation",
+			"style": {
+				"navigationBarTitleText": "定向邀签"
+			}
+		},
+		{
+			"path": "pages/labour/contractSet",
+			"style": {
+				"navigationBarTitleText": "设置合同"
+			}
+		},
+		{
+			"path": "pages/labour/componentSet",
+			"style": {
+				"navigationBarTitleText": "设置组件"
+			}
+		},
+		{
+			"path": "pages/labour/info",
+			"style": {
+				"navigationBarTitleText": "劳务信息"
+			}
+		},
+		{
+			"path": "pages/labour/infoDetail",
+			"style": {
+				"navigationBarTitleText": "劳务信息"
+			}
+		},
+		{
+			"path": "pages/labour/insurance",
+			"style": {
+				"navigationBarTitleText": "保险"
+			}
+		},
+		{
+			"path": "pages/labour/insuranceDetail",
+			"style": {
+				"navigationBarTitleText": "保险详情"
+			}
+		},
+		{
+			"path": "pages/labour/salarySettle",
+			"style": {
+				"navigationBarTitleText": "工资结算"
+			}
+		},
+		{
+			"path": "pages/labour/settingDetail",
+			"style": {
+				"navigationBarTitleText": "结算详情"
+			}
+		},
+		{
+			"path": "pages/labour/grantDetail",
+			"style": {
+				"navigationBarTitleText": "发放详情"
+			}
+		},
+		{
+			"path": "pages/labour/surplusDetail",
+			"style": {
+				"navigationBarTitleText": "结余详情"
+			}
+		},
+		{
+			"path": "pages/labour/train",
+			"style": {
+				"navigationBarTitleText": "培训"
+			}
+		},
+		{
+			"path": "pages/labour/trainDetail",
+			"style": {
+				"navigationBarTitleText": "培训详情"
+			}
+		},
+		{
+			"path": "pages/h5/wechatCode",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/h5/scanCodeTran",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/assess/info",
+			"style": {
+				"navigationBarTitleText": "发表信息"
+			}
+		},
+		{
+			"path": "pages/assess/notice",
+			"style": {
+				"navigationBarTitleText": "会议通知"
+			}
+		},
+		{
+			"path": "pages/assess/receive",
+			"style": {
+				"navigationBarTitleText": "收发文"
+			}
+		},
+		{
+			"path": "pages/assess/infoDetails",
+			"style": {
+				"navigationBarTitleText": "发表信息详情"
+			}
+		},
+		{
+			"path": "pages/assess/meetingDetails",
+			"style": {
+				"navigationBarTitleText": "会议信息详情"
+			}
+		},
+		{
+			"path": "pages/assess/addMessageCenter",
+			"style": {
+				"navigationBarTitleText": "发文详情"
+			}
+		},
+		{
+			"path": "pages/assess/forwardTheArticle",
+			"style": {
+				"navigationBarTitleText": "转发文章"
+			}
+		},
+		{
+			"path": "pages/assess/transpond",
+			"style": {
+				"navigationBarTitleText": "转发详情"
+			}
+		},
+		{
+			"path": "pages/assess/previewInformation",
+			"style": {
+				"navigationBarTitleText": "收发文预览详情"
+			}
+		},
+		{
+			"path": "pages/login/scanCodeLogin",
+			"style": {
+				"navigationBarTitleText": "扫码登录"
+			}
+		},
+		{
+			"path": "pages/production/components/set-approver",
+			"style": {
+				"navigationBarTitleText": "设置审批人"
+			}
+		},
+		{
+			"path": "pages/nodeCheck/nodeCheck",
+			"style": {
+				"navigationBarTitleText": "审批信息"
+			}
+		},
+		{
+			"path": "pages/nodeCheck/nodeRecord",
+			"style": {
+				"navigationBarTitleText": "审批信息"
+			}
+		},
+		{
+			"path": "pages/nodeCheck/flow",
+			"style": {
+				"navigationBarTitleText": "流程图"
+			}
+		},
+		{
+			"path": "pages/nodeCheck/signNodeCheck",
+			"style": {
+				"navigationBarTitleText": "签章审批信息"
+			}
+		},
+		{
+			"path": "pages/signSend/sendSeal",
+			"style": {
+				"navigationBarTitleText": "发起签章"
+			}
+		},
+		{
+			"path": "pages/signSend/sealSet",
+			"style": {
+				"navigationBarTitleText": "盖章"
+			}
+		},
+		{
+			"path": "pages/setApprover/setoneApprover",
+			"style": {
+				"navigationBarTitleText": "设置审批人"
+			}
+		},
+		{
+			"path": "pages/signSend/sealApporval",
+			"style": {
+				"navigationBarTitleText": "签章审批"
+			}
+		},
+		{
+			"path": "pages/production/preview",
+			"style": {
+				"navigationBarTitleText": "流程图"
+			}
+		},
+		{
+			"path": "pages/esign/middlePage",
+			"style": {
+				"navigationBarTitleText": "中间页"
+			}
+		},
+		{
+			"path": "pages/map/map",
+			"style": {
+				"navigationBarTitleText": "地图"
+			}
+		},
+		{
+			"path": "pages/previewPage/previewPage",
+			"style": {
+				"navigationBarTitleText": "预览文件"
+				// "autoBackButton": false,
+				// "navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/previewPage/webView",
+			"style": {
+				"navigationBarTitleText": "预览文件",
+				"autoBackButton": false,
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/system/payUser",
+			"style": {
+				"navigationBarTitleText": "付费用户"
+			}
+		},
+		{
+			"path": "pages/system/businessUser",
+			"style": {
+				"navigationBarTitleText": "商务用户"
+			}
+		},
+		{
+			"path": "pages/often/crew/info",
+			"style": {
+				"navigationBarTitleText": "班组人员详情"
+			}
+		},
+		{
+			"path": "pages/assess/file",
+			"style": {
+				"navigationBarTitleText": "文件盖章"
+			}
+		},
+		{
+			"path": "pages/certification/superior",
+			"style": {
+				"navigationBarTitleText": "上级单位"
+			}
+		},
+		{
+			"path": "pages/certification/affiliatedUnits",
+			"style": {
+				"navigationBarTitleText": "所辖单位"
+			}
+		},
+		{
+			"path": "pages/certification/affiliatedUnitsEdit",
+			"style": {
+				"navigationBarTitleText": "所辖单位人员"
+			}
+		},
+		{
+			"path": "pages/certification/selectLink",
+			"style": {
+				"navigationBarTitleText": "上级单位绑定"
+			}
+		},
+		{
+			"path": "pages/projectManage/change",
+			"style": {
+				"navigationBarTitleText": "设计变更"
+			}
+		},
+		{
+			"path": "pages/projectManage/contract",
+			"style": {
+				"navigationBarTitleText": "合同管理"
+			}
+		},
+		{
+			"path": "pages/projectManage/customer",
+			"style": {
+				"navigationBarTitleText": "客户管理"
+			}
+		},
+		{
+			"path": "pages/projectManage/disclosure",
+			"style": {
+				"navigationBarTitleText": "技术交底"
+			}
+		},
+		{
+			"path": "pages/projectManage/info",
+			"style": {
+				"navigationBarTitleText": "项目信息"
+			}
+		},
+		{
+			"path": "pages/projectManage/infoAdd",
+			"style": {
+				"navigationBarTitleText": "新增项目信息"
+			}
+		},
+		{
+			"path": "pages/projectManage/infoAddProject",
+			"style": {
+				"navigationBarTitleText": "新增项目工程信息"
+			}
+		},
+		{
+			"path": "pages/projectManage/linkPro",
+			"style": {
+				"navigationBarTitleText": "关联标段"
+			}
+		},
+		{
+			"path": "pages/projectManage/metering",
+			"style": {
+				"navigationBarTitleText": "计量管理"
+			}
+		},
+		{
+			"path": "pages/projectManage/process",
+			"style": {
+				"navigationBarTitleText": "施工验收"
+			}
+		},
+		{
+			"path": "pages/projectManage/workExamine",
+			"style": {
+				"navigationBarTitleText": "流程审批"
+			}
+		},
+		{
+			"path": "pages/projectManage/listItems",
+			"style": {
+				"navigationBarTitleText": "清单项目表",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/projectManage/supplyMaterials",
+			"style": {
+				"navigationBarTitleText": "供应材料",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/contractData/summary",
+			"style": {
+				"navigationBarTitleText": "合同汇总",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/contractData/contractDetail",
+			"style": {
+				"navigationBarTitleText": "合同详情",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/scheduleData/year",
+			"style": {
+				"navigationBarTitleText": "年度计划",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/scheduleData/quarter",
+			"style": {
+				"navigationBarTitleText": "季度计划",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/scheduleData/monthly",
+			"style": {
+				"navigationBarTitleText": "月度计划",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/scheduleData/planTable2",
+			"style": {
+				"navigationBarTitleText": "进度计划",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/scheduleData/actuallyFinish",
+			"style": {
+				"navigationBarTitleText": "进度计划",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/scheduleData/summary",
+			"style": {
+				"navigationBarTitleText": "进度汇总",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/measureData/summary",
+			"style": {
+				"navigationBarTitleText": "计量汇总",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/measureData/summaryDetail",
+			"style": {
+				"navigationBarTitleText": "计量汇总",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/financeData/summary",
+			"style": {
+				"navigationBarTitleText": "财务汇总",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/costData/summary",
+			"style": {
+				"navigationBarTitleText": "成本汇总",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/costData/constDetail",
+			"style": {
+				"navigationBarTitleText": "成本汇总",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/financeData/financeDetail",
+			"style": {
+				"navigationBarTitleText": "财务汇总",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/schedule/actuallyFinish",
+			"style": {
+				"navigationBarTitleText": "实际完成",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/projectManage/workExamineDetail",
+			"style": {
+				"navigationBarTitleText": "流程审批",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/facility/buy",
+			"style": {
+				"navigationBarTitleText": "设备购买",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/facility/rental",
+			"style": {
+				"navigationBarTitleText": "设备租赁",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/facility/addbuy",
+			"style": {
+				"navigationBarTitleText": "新增设备",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/index/priviewArt",
+			"style": {
+				"navigationBarTitleText": "文章详情",
+				"enablePullDownRefresh": false
+			}
+		}
+
+
+	],
+
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "jianwang",
+		"navigationStyle": "custom", // 设置默认导航栏隐藏
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#F8F8F8",
+		"rpxCalcMaxDeviceWidth": 2000, // rpx 计算所支持的最大设备宽度，单位 px，默认值为 960
+		"rpxCalcBaseDeviceWidth": 375 // 设备实际宽度超出 rpx 计算所支持的最大宽度时，rpx计算所采用的固定屏幕宽度，单位 px，默认值为 375
+	},
+	"tabBar": {
+		"color": "#8B8B8B", // 表示tabBar item项中文字默认的颜色
+		"selectedColor": "rgb(2, 167, 240)", // 表示tabBar item项中文字选中的颜色
+		"borderStyle": "white", // 表示tabBar 上边框的颜色，目前只支持 black/white
+		"backgroundColor": "#ffffff", // 表示 tabBar 的背景颜色
+		"list": [{
+			"pagePath": "pages/index/index", // 表示第一tab项的页面路径
+			"iconPath": "static/image/icon_home_u257.png", // 表示当前 tab 未选中时所显示的图标路径
+			"selectedIconPath": "static/image/icon_home_u257_mouseOver.png", // 表示当前 tab 选中时所显示的图标文件路径
+			"text": "首页" // 表示当前 tab 的文字
+		}, {
+			"pagePath": "pages/me/me",
+			"iconPath": "static/image/icon_me_u261.png",
+			"selectedIconPath": "static/image/icon_me_u261_mouseOver.png",
+			"text": "我的"
+		}],
+		"midButton": {
+			"width": "80px",
+			"height": "80px",
+			"text": "扫一扫",
+			"iconPath": "static/image/scanCode.png",
+			"iconWidth": "60px"
+		}
+	}
+
+}

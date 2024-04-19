@@ -1,0 +1,596 @@
+<template>
+	<view class="wrapper">
+		<u-navbar leftText="管理单位" bgColor="rgb(0 0 0 / 0%)" leftIconColor="#fff" :autoBack="true"></u-navbar>
+		<!-- <view class="pdt-ios"></view> -->
+		<view class="list-content" v-if="$auth('custom:superiors:add')">
+			<!-- <view class="item" v-for="item in list" :key="item.pkId" @click="openPop(item)">
+				<u-icon name="../../static/image/superior.png" class="iconfont" size="20"></u-icon>
+				<view class="item-content">
+					<view class="nameAndLink">
+          			  <view class="name">{{ item.orgName }}</view>
+          			  <view class="tag" :class="{ 'tag-link': !!item.linkStatus, 'tag-nolink': !item.linkStatus, }" >{{ !!item.linkStatus ? "已关联" : "未关联" }}</view >
+          			</view>
+					<view class="types">{{ item.orgType === 2 ? "建设单位" : item.orgType === 3 ? "监理公司" : item.orgType === 9 ? "设计院" : "" }}</view>
+				</view>
+			</view> -->
+			<view class="item item-bg1" @click="obj1.pkId?openPop(obj1):go(1,2)">
+				<view class="line bg1"></view>
+				<view class="orgContent" v-if="!!obj1.pkId">
+					<view class="orgType">
+						<view class="orgTypeName">建设单位</view>
+						<view class="linkType" v-if="!!obj1.linkStatus">(已关联)</view>
+					</view>
+					<view class="orgName">{{obj1.orgName}}</view>
+					<view class="linkUser">{{obj1.orgLinkMan}}</view>
+					<view class="linkPhone">{{obj1.orgLinkPhone}}</view>
+				</view>
+				<view class="noOrg" v-if="!obj1.pkId">
+					<u-icon name="plus" class="add" size="30" color="#ccc"></u-icon>
+					<view class="addTitle">添加建设单位</view>
+				</view>
+			</view>
+			<view class="item item-bg2" @click="obj2.pkId?openPop(obj2):go(1,9)">
+				<view class="line bg2"></view>
+				<view class="orgContent" v-if="!!obj2.pkId">
+					<view class="orgType">
+						<view class="orgTypeName">设计院</view>
+						<view class="linkType" v-if="!!obj2.linkStatus">(已关联)</view>
+					</view>
+					<view class="orgName">{{obj2.orgName}}</view>
+					<view class="linkUser">{{obj2.orgLinkMan}}</view>
+					<view class="linkPhone">{{obj2.orgLinkPhone}}</view>
+				</view>
+				<view class="noOrg" v-if="!obj2.pkId">
+					<u-icon name="plus" class="add" size="30" color="#ccc"></u-icon>
+					<view class="addTitle">添加设计院</view>
+				</view>
+			</view>
+			<view class="item item-bg3" @click="obj3.pkId?openPop(obj3):go(1,3)">
+				<view class="line bg3"></view>
+				<view class="orgContent" v-if="!!obj3.pkId">
+					<view class="orgType">
+						<view class="orgTypeName">监理公司</view>
+						<view class="linkType" v-if="!!obj3.linkStatus">(已关联)</view>
+					</view>
+					<view class="orgName">{{obj3.orgName}}</view>
+					<view class="linkUser">{{obj3.orgLinkMan}}</view>
+					<view class="linkPhone">{{obj3.orgLinkPhone}}</view>
+				</view>
+				<view class="noOrg" v-if="!obj3.pkId">
+					<u-icon name="plus" class="add" size="30" color="#ccc"></u-icon>
+					<view class="addTitle">添加监理公司</view>
+				</view>
+			</view>
+		</view>
+		<view class="list-content" v-else>
+			<view class="item item-bg1" @click="openPop(obj1)" v-if="!!obj1.pkId">
+				<view class="line bg1"></view>
+				<view class="orgContent">
+					<view class="orgType">
+						<view class="orgTypeName">建设单位</view>
+						<view class="linkType" v-if="!!obj1.linkStatus">(已关联)</view>
+					</view>
+					<view class="orgName">{{obj1.orgName}}</view>
+					<view class="linkUser">{{obj1.orgLinkMan}}</view>
+					<view class="linkPhone">{{obj1.orgLinkPhone}}</view>
+				</view>
+			</view>
+			<view class="item item-bg2" @click="openPop(obj2)" v-if="!!obj2.pkId">
+				<view class="line bg2"></view>
+				<view class="orgContent">
+					<view class="orgType">
+						<view class="orgTypeName">设计院</view>
+						<view class="linkType" v-if="!!obj2.linkStatus">(已关联)</view>
+					</view>
+					<view class="orgName">{{obj2.orgName}}</view>
+					<view class="linkUser">{{obj2.orgLinkMan}}</view>
+					<view class="linkPhone">{{obj2.orgLinkPhone}}</view>
+				</view>
+			</view>
+			<view class="item item-bg3" @click="openPop(obj3)" v-if="!!obj3.pkId">
+				<view class="line bg3"></view>
+				<view class="orgContent">
+					<view class="orgType">
+						<view class="orgTypeName">监理公司</view>
+						<view class="linkType" v-if="!!obj3.linkStatus">(已关联)</view>
+					</view>
+					<view class="orgName">{{obj3.orgName}}</view>
+					<view class="linkUser">{{obj3.orgLinkMan}}</view>
+					<view class="linkPhone">{{obj3.orgLinkPhone}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="pdb"></view>
+		<!-- <view class="btn" v-if="$auth('custom:superiors:add')" @click="go(1)">新增</view> -->
+		<u-popup :show="showPop" :round="10">
+			<view class="popup detil-pop">
+				<view class="detil-pop-head">
+					<view class="name">{{ nowClick.orgName }}</view>
+					<u-icon name="close" color="rgba(170, 170, 170, 1)" class="closeBtn" @click="closePop"></u-icon>
+					<!-- <view ></view> -->
+				</view>
+				<view class="detil-pop-content">
+				<tableForm :pageHeight="false" :pageMr="false" @click="tdClick" :list="[
+         		{name:'联系人',value:nowClick.orgLinkMan,show:true},
+         		{name:'联系电话',value:nowClick.orgLinkPhone,show:true,click:true},
+         		{name:'关联状态',value:!!nowClick.linkStatus ? '已关联' : '未关联',show:true},
+         		{name:'备注',value:nowClick.remark,show:true},
+         		]">
+         		</tableForm>
+				</view>
+				<view class="pdb"></view>
+				<view class="detil-pop-footer footer">
+					<u-button  v-if="$auth('custom:superiors:delete')" class="btns cancle" type="default" text="删除"
+						@click="delCus"></u-button>
+					<u-button class="btns" v-if="!!nowClick.linkStatus && $auth('custom:superiors:binding')" type="warning"
+						text="解绑" @click="relieveLink"></u-button>
+					<u-button class="btns" v-if="!nowClick.linkStatus && $auth('custom:superiors:binding')" type="success" text="绑定"
+						@click="openLinkPop"></u-button>
+					<u-button v-if="$auth('custom:superiors:update')"  class="btns" type="primary" text="编辑" @click="go(2,nowClick.orgType)"></u-button>
+				</view>
+			</view>
+			<!-- 绑定弹框 -->
+			<!-- <u-popup :show="showLinkPop">
+				<view class="showLinkPop">
+					<view class="head">
+						<view class="name">绑定关联</view>
+						<u-icon name="close" color="#fff" class="closeBtn" @click="closeLinkPop"></u-icon>
+					</view>
+					<view class="content">
+						<view class="title">手机号</view>
+						<view class="inputs">
+							<u--input border="none" clearable v-model="linkPhone" maxlength="11" type="number"></u--input>
+						</view>
+						<view class="title">搜索结果</view>
+						<view class="searchRes" v-if="!loading">
+							<view class="item" v-for="item in linkList" :key="item.pkId">
+								<u-icon name="../../static/image/superior.png" class="iconfont" size="20"></u-icon>
+								<view class="item-content">
+									<view class="name">{{item.orgName}}</view>
+									<view class="types">{{orgTypeList[item.orgType]}}</view>
+								</view>
+								<view class="linkBtn tag-link" @click="isLink(item)">绑定</view>
+							</view>
+						</view>
+						<view class="searchRes loading" v-else>
+							<u-loading-icon></u-loading-icon>
+						</view>
+					</view>
+					<view class="footer">
+						<u-button class="btns cancle" type="default" text="取消" @click="closeLinkPop"></u-button>
+						<u-button class="btns" type="primary" text="搜索" @click="searchLinkList"></u-button>
+					</view>
+				</view>
+			</u-popup> -->
+			<!-- 删除弹框 -->
+			<u-modal :show="showDelMod" title="删除确认" content="确定删除该客户信息？" showCancelButton @confirm="delConfirm"
+				@cancel="closeDelMod"></u-modal>
+			<!-- 绑定弹框 -->
+			<u-modal :show="showLinkMod" title="解除关联确认" content="确定解除该客户信息在系统中关联关系？" showCancelButton
+				@confirm="linkModConfirm" @cancel="closeLinkMod"></u-modal>
+			<u-modal :show="showLinkMod2" title="绑定关联确认" content="当前已产生关联数据，是否重新绑定原公司？" showCancelButton
+				@confirm="linkModConfirm2" @cancel="closeLinkMod2" confirmText="重新绑定"></u-modal>
+		</u-popup>
+	</view>
+</template>
+
+<script>
+import tableForm from '../../components/table-form/table-form.vue';
+	export default {
+		components:{tableForm},
+		data() {
+			return {
+				showPop: false,
+				showLinkPop: false,
+				showDelMod: false,
+				showLinkMod: false,
+				remark: "",
+				list: [],
+				cusTypeList: [
+					{ id: 2, name: "建设单位" },
+					{ id: 3, name: "监理公司" },
+					{ id: 9, name: "设计院" },
+				],
+				orgTypeList: ["系统运营商", "系统代理商", "建设单位", "监理公司", "施工单位", "项目部", "供应商", "分包商", "劳务工人", "设计院"],
+				nowClick: {},
+				loading: false,
+				linkList: [],
+				linkPhone: "",
+				obj1:{},
+				obj2:{},
+				obj3:{},
+				showLinkMod2:false
+			};
+		},
+		onShow() {
+			this.getParentOrg();
+		},
+		methods: {
+			tdClick(e){
+      console.log(e);
+      if(e.name=='联系电话'){
+        uni.makePhoneCall({
+        phoneNumber:this.nowClick.orgLinkPhone,
+      });
+      }
+    },
+			resh(){
+				this.closePop();
+				this.getParentOrg()
+			},
+			getParentOrg() {
+				// getParentOrg
+				let user = uni.getStorageSync("user");
+				let data = {};
+				if (user.orgType != 5) {
+					data.fkOrgId = uni.getStorageSync("nowOrgId");
+				}
+				this.$api.getParentOrg(data).then(res => {
+					if (res.code === 200) {
+						this.list = res.data;
+						this.obj1 ={}
+						this.obj2 ={}
+						this.obj3 ={}
+						this.list.forEach(item=>{
+							if(item.orgType==2){
+								this.obj1 = item
+							}
+							if(item.orgType==9){
+								this.obj2 = item
+							}
+							if(item.orgType==3){
+								this.obj3 = item
+							}
+						})
+					} else {
+						uni.showToast({ title: res.msg, icon: "none" });
+					}
+				});
+			},
+			updateRelationById(pkId, orgId) {
+				uni.showLoading({ mask: true });
+				this.$api.updateRelationById({ pkId, orgId }).then(res => {
+					uni.hideLoading();
+					if (res.code === 200) {
+						if (orgId) {
+							uni.showToast({ title: "绑定成功" });
+							this.getParentOrg();
+							this.closeLinkMod2();
+							this.closePop();
+						} else {
+							uni.showToast({ title: "解绑成功" });
+							this.getParentOrg();
+							this.closeLinkMod();
+							this.closePop();
+						}
+					} else {
+						uni.showToast({ title: res.msg, icon: "none" });
+					}
+				}).catch(err => {
+					uni.hideLoading();
+				});
+			},
+			go(type,orgType) {
+				let url = `/pages/custom/detail?tiltetype=1&type=${type}&orgType=${orgType}`;
+				if (type === 2) {
+					url = url + `&obj=${JSON.stringify(this.nowClick)}`;
+				}
+				uni.navigateTo({ url });
+				this.closePop();
+			},
+			openPop(item) {
+				this.nowClick = item;
+				this.showPop = true;
+			},
+			delCus() {
+				this.showDelMod = true;
+			},
+			delConfirm() {
+				this.$api.clearCustomLink({ pkId: this.nowClick.pkId }).then(res => {
+					if (res.code === 200) {
+						uni.showToast({ title: "删除成功", icon: "success" });
+						this.getParentOrg();
+						this.closeDelMod();
+						this.closePop();
+					} else {
+						uni.showToast({ title: res.msg, icon: "none" });
+					}
+				});
+			},
+			closeDelMod() {
+				this.showDelMod = false;
+			},
+			relieveLink() {
+				this.showLinkMod = true;
+			},
+			linkModConfirm() {
+				this.updateRelationById(this.nowClick.pkId);
+			},
+			closeLinkMod() {
+				this.showLinkMod = false;
+			},
+			linkModConfirm2() {
+				this.updateRelationById(this.nowClick.pkId,this.nowClick.fkLinkOrgId);
+			},
+			closeLinkMod2() {
+				this.showLinkMod2 = false;
+			},
+			closePop() {
+				this.showPop = false;
+			},
+			openLinkPop() {
+				if(this.nowClick.fkLinkOrgId&&this.nowClick.fkLinkOrgId != '0'){
+					this.showLinkMod2 = true;
+				}else{
+					uni.navigateTo({url:`/pages/custom/selectLink?pkId=${this.nowClick.pkId}&orgType=${this.nowClick.orgType}`})
+				}
+			},
+			isLink(row) {
+				console.log(row);
+				this.updateRelationById(this.nowClick.pkId, row.pkId);
+			},
+			searchLinkList() {
+				let data = {
+					linkPhone: this.linkPhone,
+					orgType: this.nowClick.orgType
+				};
+				this.loading = true;
+				this.$api.searchOrgLinkPhone(data).then(res => {
+					this.loading = false;
+					if (res.code === 200) {
+						this.linkList = res.data;
+					} else {
+						uni.showToast({ title: res.msg, icon: "none" });
+					}
+				}).catch(err => {
+					this.loading = false;
+				});
+			},
+			closeLinkPop() {
+				this.linkPhone = "";
+				this.linkList = [];
+				this.showLinkPop = false;
+				this.loading = false;
+			},
+		},
+	};
+</script>
+
+<style lang="scss" scoped>
+	// .item {
+	// 	display: flex;
+	// 	align-items: start;
+	// 	padding: 30rpx 20rpx;
+	// 	background-color: #fff;
+	// 	margin-bottom: 10rpx;
+
+	// 	.iconfont {
+	// 		width: 60rpx;
+	// 	}
+
+	// 	.item-content {
+    // 		width: 550rpx;
+  	// 		.nameAndLink{
+  	// 		  display: flex;
+  	// 		  align-items: center;
+  	// 		  height: 50rpx;
+  	// 		}
+  	// 		.name {
+  	// 		  max-width: 550rpx;
+  	// 		  // margin-bottom: 20rpx;
+  	// 		  font-size: 30rpx;
+  	// 		  font-weight: 600;
+  	// 		  overflow: hidden; /*超出部分隐藏*/
+  	// 		  white-space: nowrap; /*禁⽌换⾏*/
+  	// 		  text-overflow: ellipsis; /*省略号*/
+  	// 		}
+  	// 		.types {
+  	// 		  font-size: 24rpx;
+  	// 		  color: #a6aebc;
+  	// 		}
+  	// 	}
+
+	// 	.tag {
+	// 		width: 100rpx;
+	// 		padding: 10rpx;
+	// 		font-size: 24rpx;
+	// 		margin-left: 6rpx;
+	// 		text-align: center;
+	// 	}
+
+	// 	.tag-link {
+	// 		color: #2a82e4;
+	// 		background-color: #d9f4ff;
+	// 	}
+
+	// 	.tag-nolink {
+	// 		color: #aaaaaa;
+	// 		background-color: #eeeeee;
+	// 	}
+
+	// 	.linkBtn {
+	// 		width: 100rpx;
+	// 		height: 74rpx;
+	// 		line-height: 74rpx;
+	// 		text-align: center;
+	// 		background-color: #d4e6fa;
+	// 		color: #2a82e4;
+	// 	}
+	// }
+	.list-content{
+		padding:0 24rpx;
+	}
+	.item{
+		display: flex;
+		width: 100%;
+		height: 360rpx;
+		margin-top: 20rpx;
+		border-radius: 8rpx;
+		overflow: hidden;
+		background-color: #fff;
+		background-repeat: no-repeat;
+		background-size: 230rpx 230rpx;
+		background-position: 450rpx 130rpx;
+		.line{
+			width: 12rpx;
+			height: 100%;
+		}
+		.orgContent{
+			flex: 1;
+			padding: 46rpx 28rpx;
+			.orgType{
+				display: flex;
+				font-size: 24rpx;
+				margin-bottom: 18rpx;
+				.orgTypeName{
+					color: #095cab;
+				}
+				.linkType{
+					margin-left: 20rpx;
+					opacity: 0.2;
+				}
+			}
+			.orgName{
+				font-weight: 700;
+				font-size: 32rpx;
+				line-height: 44rpx;
+				margin-bottom: 56rpx;
+			}
+			.linkUser{
+				margin-bottom: 8rpx;
+			}
+			.linkUser,.linkPhone{
+				line-height: 36rpx;
+				font-size: 24rpx;
+			}
+		}
+		.noOrg{
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			.add{
+				color: #cccccc;
+				margin-bottom: 18rpx;
+			}
+			.addTitle{
+				font-size: 24rpx;
+				opacity: 0.6;
+			}
+		}
+		.bg1{
+			background: linear-gradient(180deg, rgba(42, 130, 228, 1) 0%, rgba(185, 165, 250, 1) 100%);
+		}
+		.bg2{
+			background: linear-gradient(180deg, rgba(85, 242, 93, 1) 0%, rgba(41, 205, 227, 1) 100%);
+		}
+		.bg3{
+			background: linear-gradient(180deg, rgba(242, 143, 85, 1) 0%, rgba(227, 41, 41, 1) 100%);
+		}
+	}
+	.item-bg1{
+		background-image: url('/static/image/superiors1.png');
+	}
+	.item-bg2{
+		background-image: url('/static/image/superiors2.png');
+	}
+	.item-bg3{
+		background-image: url('/static/image/superiors3.png');
+	}
+	.pdb {
+		height: 100rpx;
+	}
+
+	.popup {
+		.footer {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			height: 100rpx;
+			background-color: #fff;
+
+			.btns {
+    		  width: 220rpx;
+    		  margin: 0;
+    		}
+
+			.cancle {
+				background-color: #eeeeee;
+				color: #aaaaaa;
+			}
+		}
+	}
+
+	.showLinkPop {
+		height: 800rpx;
+		background-color: #2a82e4;
+
+		.head {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 80rpx;
+			// line-height: 80rpx;
+			padding: 0 20rpx;
+			color: #fff;
+			font-size: 28rpx;
+		}
+
+		.content {
+			height: 620rpx;
+			background-color: #f7f7ff;
+			padding-top: 30rpx;
+			font-size: 28rpx;
+			border-radius: 20rpx 20rpx 0 0;
+
+			.title {
+				padding-left: 20rpx;
+				font-weight: 600;
+				margin-bottom: 10rpx;
+			}
+
+			.inputs {
+				display: flex;
+				align-items: center;
+				height: 80rpx;
+				padding: 0 20rpx;
+				background-color: #fff;
+				margin-bottom: 20rpx;
+			}
+
+			.searchRes {
+				overflow: auto;
+				height: 400rpx;
+				background-color: #fff;
+			}
+
+			.loading {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		.footer {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			height: 100rpx;
+			background-color: #fff;
+
+			.btns {
+				width: 300rpx;
+			}
+
+			.cancle {
+				background-color: #eeeeee;
+				color: #aaaaaa;
+			}
+		}
+	}
+</style>

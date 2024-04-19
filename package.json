@@ -1,0 +1,34 @@
+{
+  "name": "jw-app",
+  "version": "1.0.0",
+  "description": "建网-uniapp开发",
+  "main": "main.js",
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "axios": "^1.4.0",
+    "canvas": "^2.11.2",
+    "cos-js-sdk-v5": "^1.4.11",
+    "dommatrix": "^1.0.3",
+    "echarts": "^4.9.0",
+    "editor": "^1.0.0",
+    "html2canvas": "^1.4.1",
+    "js-base64": "^3.7.2",
+    "jspdf": "^2.5.1",
+    "moment": "^2.29.4",
+    "pako": "^2.0.4",
+    "pdfh5": "^1.4.7",
+    "uview-ui": "^2.0.31",
+    "vue-esign": "^1.0.0",
+    "web-streams-polyfill": "^3.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://192.168.1.16:7710/wangjianzhong/jw-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

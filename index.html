@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="<%= BASE_URL %>static/index.css" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+		<title></title>
+	</head>
+	<script type="text/javascript">
+      
+		window._AMapSecurityConfig = {
+		  securityJsCode: '7245d5c1ac4d619cc295d0ec4c402b48',
+		  serviceHost:localStorage.getItem("httpurl") +'/_AMapService',
+		}
+	  </script>
+	  <script type="text/javascript" src="./static/uni-webview.js"></script>
+	<body>
+		<div id="app"></div>
+		<!-- <script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script> -->
+		<script>
+			// 初始化
+			// var vConsole = new VConsole();
+			// console.log("Hello world");
+		</script>
+	</body>
+</html>
